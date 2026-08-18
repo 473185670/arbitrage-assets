@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://473185670.github.io/arbitrage-assets/sitemap.xml
