@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBT Mood Tracker: Free Online Mood Diary &amp; Behavioral Activation Tool</title>
+  <meta name="description" content="Free interactive CBT mood tracker. Log your daily mood, spot patterns, and practice behavioral activation. Saves to your browser, no signup. Part of a free CBT tools cluster.">
+  <meta name="keywords" content="mood tracker, cbt mood tracker, mood tracking, daily mood log, mood journal, mood diary, behavioral activation cbt, track mood online, mood tracker app, cbt mood diary, mood monitoring cbt, behavioral activation worksheet">
+  <meta property="og:title" content="CBT Mood Tracker: Free Online Mood Diary & Behavioral Activation Tool">
+  <meta property="og:description" content="Log your daily mood, spot patterns, and practice behavioral activation. Free, no signup. Saves to your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/473185670/arbitrage-assets/main/pinterest/pin1_cbt_benefits.png">
+  <link rel="canonical" href="https://473185670.github.io/arbitrage-assets/seo/cbt-mood-tracker.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CBT Mood Tracker",
+    "description": "Free interactive CBT mood tracker. Log your daily mood, spot patterns, and practice behavioral activation. Saves to your browser, no signup.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "url": "https://473185670.github.io/arbitrage-assets/seo/cbt-mood-tracker.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What is a mood tracker?", "acceptedAnswer": {"@type": "Answer", "text": "A mood tracker is a tool for recording your emotional state over time. You log your mood each day (often on a 1-5 scale) along with notes about what happened. Over days and weeks, patterns emerge that would be invisible in the moment. CBT uses mood tracking to identify triggers, monitor progress, and guide behavioral activation."}},
+      {"@type": "Question", "name": "What is behavioral activation in CBT?", "acceptedAnswer": {"@type": "Answer", "text": "Behavioral activation is a core CBT technique for low mood and depression. The principle is simple: action comes before motivation, not after. When you feel down, you withdraw and do less, which makes you feel worse, creating a downward spiral. Behavioral activation breaks this by scheduling small enjoyable or meaningful activities even when you don't feel like it. Mood tracking tells you which activities actually lift your mood."}},
+      {"@type": "Question", "name": "How often should I track my mood?", "acceptedAnswer": {"@type": "Answer", "text": "Once a day is ideal for most people, ideally at the same time (e.g., evening). Tracking more often can feel burdensome; less often loses detail. The goal is a consistent record over weeks, not perfection. If you miss a day, just resume the next day without judgment."}},
+      {"@type": "Question", "name": "Is this mood tracker free and private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This tool is completely free and private. Your mood entries are saved only in your browser's local storage on your device. Nothing is sent to any server. You can export your data as a JSON file at any time, and clear all data with one click."}},
+      {"@type": "Question", "name": "Can mood tracking help with depression?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Mood tracking is a foundational CBT technique for depression. It serves three purposes: (1) it creates awareness of mood patterns and triggers, (2) it provides objective evidence of progress that the depressed mind often cannot see, and (3) it guides behavioral activation by showing which activities correlate with better mood. For clinical depression, use this tool alongside professional therapy."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "CBT Exercises", "item": "https://473185670.github.io/arbitrage-assets/seo/cbt-exercises-worksheets.html"},
+      {"@type": "ListItem", "position": 2, "name": "CBT Mood Tracker", "item": "https://473185670.github.io/arbitrage-assets/seo/cbt-mood-tracker.html"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f0f7f4; --primary: #4a9d7c; --primary-dark: #3a8268;
+      --accent: #6cbf8a; --accent-light: #d4ebe0; --text: #2d4a3e;
+      --text-muted: #6b8a7e; --card: #ffffff; --border: #c8ddd4;
+      --danger: #c17a7a; --warning: #d4a55a; --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; padding: 2.5rem 1rem; text-align: center; }
+    .hero h1 { font-size: 1.7rem; margin-bottom: 0.5rem; }
+    .hero p { opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 0.95rem; }
+    .hero .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; margin-top: 0.75rem; }
+    .container { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(74,157,124,0.06); }
+    .card h2 { color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .card h3 { color: var(--primary-dark); font-size: 1.05rem; margin: 0.8rem 0 0.4rem; }
+    .card p { font-size: 0.92rem; margin-bottom: 0.5rem; }
+    .card p:last-child { margin-bottom: 0; }
+    /* Mood selector */
+    .mood-row { display: flex; justify-content: space-between; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; }
+    .mood-btn { flex: 1; min-width: 55px; background: var(--card); border: 2px solid var(--border); border-radius: var(--radius); padding: 0.75rem 0.3rem; cursor: pointer; text-align: center; transition: all 0.2s; font-size: 0.8rem; }
+    .mood-btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .mood-btn.selected { border-color: var(--primary); background: var(--accent-light); box-shadow: 0 2px 8px rgba(74,157,124,0.15); }
+    .mood-emoji { font-size: 1.6rem; display: block; margin-bottom: 0.2rem; }
+    .mood-label { font-weight: 600; color: var(--text); }
+    /* Form elements */
+    label { font-size: 0.88rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.3rem; }
+    input[type="date"], textarea, select { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem; font-size: 0.9rem; font-family: inherit; background: var(--card); color: var(--text); }
+    textarea { min-height: 70px; resize: vertical; }
+    .emotion-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0; }
+    .etag { background: var(--accent-light); color: var(--primary-dark); border: 1px solid transparent; border-radius: 20px; padding: 0.3rem 0.7rem; font-size: 0.8rem; cursor: pointer; user-select: none; }
+    .etag:hover { border-color: var(--accent); }
+    .etag.selected { background: var(--primary); color: white; }
+    .btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.3rem; border-radius: 6px; font-size: 0.92rem; font-weight: 600; cursor: pointer; margin-right: 0.5rem; margin-top: 0.5rem; }
+    .btn:hover { background: var(--primary-dark); }
+    .btn.secondary { background: var(--accent-light); color: var(--primary-dark); }
+    .btn.secondary:hover { background: var(--accent); color: white; }
+    .btn.danger { background: var(--danger); }
+    .btn.danger:hover { opacity: 0.85; }
+    /* Chart */
+    .chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding: 0.5rem 0; border-bottom: 2px solid var(--border); margin: 1rem 0; overflow-x: auto; }
+    .bar { flex: 1; min-width: 18px; border-radius: 4px 4px 0 0; transition: height 0.3s; position: relative; cursor: help; }
+    .bar:hover { opacity: 0.8; }
+    .bar .tip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--text); color: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.72rem; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 10; }
+    .bar:hover .tip { opacity: 1; }
+    .chart-legend { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); }
+    /* History */
+    .entry { background: var(--accent-light); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; font-size: 0.88rem; }
+    .entry .e-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem; }
+    .entry .e-date { font-weight: 600; color: var(--primary-dark); }
+    .entry .e-mood { font-weight: 700; }
+    .entry .e-tags { font-size: 0.78rem; color: var(--text-muted); }
+    .entry .e-note { font-style: italic; color: var(--text); margin-top: 0.2rem; }
+    .entry .e-del { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 0.78rem; }
+    /* Tips */
+    .tip { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 0.6rem 0.9rem; border-radius: 0 6px 6px 0; margin-bottom: 0.5rem; font-size: 0.88rem; }
+    .tip strong { color: var(--primary-dark); }
+    /* Links */
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+    .link-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem; text-decoration: none; color: var(--text); transition: border-color 0.2s; }
+    .link-card:hover { border-color: var(--accent); }
+    .link-card .lc-title { font-weight: 600; color: var(--primary-dark); font-size: 0.9rem; }
+    .link-card .lc-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+    /* Upsell */
+    .upsell { background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg) 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 1.5rem 0; }
+    .upsell h3 { color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .upsell p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .upsell a { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .upsell a:hover { background: var(--primary-dark); }
+    /* Notice */
+    .notice { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+    .empty { text-align: center; color: var(--text-muted); padding: 1.5rem; font-size: 0.9rem; }
+    .crisis { background: #fdf2f2; border: 1px solid #e8b4b4; border-radius: var(--radius); padding: 0.75rem 1rem; margin: 1.5rem 0; font-size: 0.82rem; color: #7a3838; }
+    .crisis strong { color: #b43838; }
+    footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--primary-dark); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>CBT Mood Tracker</h1>
+    <p>Log your daily mood, spot patterns over time, and practice behavioral activation &mdash; a core CBT technique for low mood and depression.</p>
+    <span class="badge">Free &middot; No signup &middot; Private (saves to your browser)</span>
+  </div>
+
+  <div class="container">
+    <!-- Intro -->
+    <div class="card">
+      <h2>Why Track Your Mood?</h2>
+      <p>In CBT, mood tracking is the foundation of <strong>behavioral activation</strong> &mdash; the principle that <em>action comes before motivation</em>. When you feel low, you do less. Doing less makes you feel lower. It's a downward spiral. Mood tracking breaks the spiral by showing you which activities actually lift your mood, so you can schedule more of them on purpose.</p>
+      <p>Over days and weeks, your mood log reveals patterns that are invisible in any single moment: triggers, cycles, and the slow upward trend that the depressed mind often refuses to see.</p>
+    </div>
+
+    <!-- Mood Entry Form -->
+    <div class="card">
+      <h2>Log Today's Mood</h2>
+      <label>Date</label>
+      <input type="date" id="entryDate">
+      <label style="margin-top:0.8rem;">How is your mood right now?</label>
+      <div class="mood-row" id="moodSelector">
+        <div class="mood-btn" data-level="1"><span class="mood-emoji">&#128542;</span><span class="mood-label">Very Low</span></div>
+        <div class="mood-btn" data-level="2"><span class="mood-emoji">&#128577;</span><span class="mood-label">Low</span></div>
+        <div class="mood-btn" data-level="3"><span class="mood-emoji">&#128528;</span><span class="mood-label">Neutral</span></div>
+        <div class="mood-btn" data-level="4"><span class="mood-emoji">&#128522;</span><span class="mood-label">Good</span></div>
+        <div class="mood-btn" data-level="5"><span class="mood-emoji">&#128525;</span><span class="mood-label">Very Good</span></div>
+      </div>
+      <label>Emotions (select all that apply)</label>
+      <div class="emotion-tags" id="emotionTags">
+        <span class="etag">anxious</span><span class="etag">sad</span><span class="etag">irritable</span>
+        <span class="etag">hopeless</span><span class="etag">tired</span><span class="etag">numb</span>
+        <span class="etag">calm</span><span class="etag">content</span><span class="etag">grateful</span>
+        <span class="etag">motivated</span><span class="etag">joyful</span><span class="etag">proud</span>
+        <span class="etag">angry</span><span class="etag">ashamed</span><span class="etag">worried</span>
+      </div>
+      <label>What happened today? (activities, events, sleep, notes)</label>
+      <textarea id="entryNote" placeholder="e.g., Slept 7h. Went for a walk in the morning. Called a friend. Avoided opening email. Ate lunch outside."></textarea>
+      <button class="btn" onclick="saveEntry()">Save Entry</button>
+      <p class="notice" id="saveNotice"></p>
+    </div>
+
+    <!-- Chart -->
+    <div class="card" id="chartCard" style="display:none;">
+      <h2>Your Mood Over Time</h2>
+      <div class="chart" id="chart"></div>
+      <div class="chart-legend">
+        <span>&#128542; Very Low (1)</span>
+        <span>&#128528; Neutral (3)</span>
+        <span>&#128525; Very Good (5)</span>
+      </div>
+      <p class="notice" id="chartSummary"></p>
+    </div>
+
+    <!-- History -->
+    <div class="card">
+      <h2>Mood History</h2>
+      <div id="historyList"></div>
+      <div style="margin-top:0.8rem;">
+        <button class="btn secondary" onclick="exportData()">Export Data (JSON)</button>
+        <button class="btn danger" onclick="clearAll()">Clear All Data</button>
+      </div>
+    </div>
+
+    <!-- Behavioral Activation Tips -->
+    <div class="card">
+      <h2>Behavioral Activation: How to Use Your Mood Data</h2>
+      <p>Once you have a week or two of entries, look for the pattern: <strong>which activities show up on your better days?</strong> That's your behavioral activation target. Schedule more of those activities, even when you don't feel like it. The mood follows the action, not the other way around.</p>
+      <h3>Quick-Start Tips</h3>
+      <div class="tip"><strong>1. Start tiny.</strong> Don't wait for motivation. Pick one 10-minute activity (a walk, a call, a shower) and do it. Action precedes motivation.</div>
+      <div class="tip"><strong>2. Schedule, don't wait.</strong> Put activities on your calendar. "When I feel like it" means "never" when you're low. "Tuesday 3pm" works.</div>
+      <div class="tip"><strong>3. Track before and after.</strong> Rate your mood before an activity, then after. The gap is your evidence that action works &mdash; even when your mind said it wouldn't.</div>
+      <div class="tip"><strong>4. Mix mastery and pleasure.</strong> Schedule both accomplishing tasks (mastery) and enjoyable activities (pleasure). Low mood kills both; you need both to recover.</div>
+      <div class="tip"><strong>5. Watch the trend, not the day.</strong> A single bad day is noise. Look at the 7-day average over weeks. Recovery is a jagged upward line, not a smooth one.</div>
+    </div>
+
+    <!-- Crisis -->
+    <div class="crisis">
+      <strong>If you are in crisis or having thoughts of self-harm:</strong> Call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741. This tool is for self-reflection and is not a substitute for professional care.
+    </div>
+
+    <!-- Related Tools -->
+    <div class="card">
+      <h2>More Free CBT Tools</h2>
+      <p>Part of a free CBT tools cluster &mdash; each page captures a different part of the CBT journey:</p>
+      <div class="links-grid">
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/free-cbt-thought-record-tool.html"><span class="lc-title">CBT Thought Record Tool</span><span class="lc-desc">7-step interactive thought record with distortion checker</span></a>
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/cognitive-distortion-checker.html"><span class="lc-title">Cognitive Distortion Checker</span><span class="lc-desc">Paste a thought &rarr; see which thinking traps apply</span></a>
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/how-to-do-cbt-thought-record.html"><span class="lc-title">How to Do a Thought Record</span><span class="lc-desc">Complete guide with worked example</span></a>
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/cbt-thought-record-template.html"><span class="lc-title">Printable Thought Record</span><span class="lc-desc">Classic 7-column worksheet, print or fill online</span></a>
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/cbt-for-anxiety.html"><span class="lc-title">CBT for Anxiety + Grounding</span><span class="lc-desc">6 anxiety techniques + interactive 5-4-3-2-1 grounding</span></a>
+        <a class="link-card" href="https://473185670.github.io/arbitrage-assets/seo/cbt-exercises-worksheets.html"><span class="lc-title">CBT Exercises &amp; Worksheets</span><span class="lc-desc">10 core CBT techniques with step-by-step instructions</span></a>
+      </div>
+    </div>
+
+    <!-- Upsell -->
+    <div class="upsell">
+      <h3>Want a Structured CBT Journal in Notion?</h3>
+      <p>Track moods, thought records, and behavioral activation in a connected Notion template &mdash; your data, your workspace, forever.</p>
+      <a href="https://4043969836017.gumroad.com/l/yyzll" target="_blank" rel="noopener">Get the CBT Notion Template ($7)</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Free CBT Mood Tracker &middot; <a href="https://473185670.github.io/arbitrage-assets/seo/cbt-exercises-worksheets.html">CBT Exercises</a> &middot; <a href="https://473185670.github.io/arbitrage-assets/sitemap.xml">Sitemap</a></p>
+    <p style="margin-top:0.3rem;">All data stays in your browser. No server, no account, no tracking.</p>
+  </footer>
+
+  <script>
+    const STORAGE_KEY = 'cbt_mood_entries';
+    const moodColors = {1:'#c17a7a', 2:'#d4a55a', 3:'#c8ddd4', 4:'#6cbf8a', 5:'#4a9d7c'};
+    const moodEmojis = {1:'\u{1F615}',2:'\u{1F611}',3:'\u{1F610}',4:'\u{1F642}',5:'\u{1F60D}'};
+    const moodWords = {1:'Very Low',2:'Low',3:'Neutral',4:'Good',5:'Very Good'};
+    let selectedMood = null;
+    let selectedEmotions = [];
+
+    // Init date
+    document.getElementById('entryDate').valueAsDate = new Date();
+
+    // Mood selector
+    document.querySelectorAll('.mood-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedMood = parseInt(btn.dataset.level);
+      });
+    });
+
+    // Emotion tags
+    document.querySelectorAll('.etag').forEach(tag => {
+      tag.addEventListener('click', () => {
+        tag.classList.toggle('selected');
+        const word = tag.textContent;
+        if (tag.classList.contains('selected')) { if(!selectedEmotions.includes(word)) selectedEmotions.push(word); }
+        else { selectedEmotions = selectedEmotions.filter(e => e !== word); }
+      });
+    });
+
+    function getEntries() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+      catch(e) { return []; }
+    }
+
+    function saveEntry() {
+      const date = document.getElementById('entryDate').value;
+      const note = document.getElementById('entryNote').value.trim();
+      if (!date) { showNotice('Please select a date.', true); return; }
+      if (!selectedMood) { showNotice('Please select a mood level.', true); return; }
+      const entries = getEntries();
+      // Replace existing entry for same date
+      const existing = entries.findIndex(e => e.date === date);
+      const entry = { date, mood: selectedMood, emotions: [...selectedEmotions], note, ts: Date.now() };
+      if (existing >= 0) entries[existing] = entry; else entries.push(entry);
+      entries.sort((a,b) => a.date.localeCompare(b.date));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      showNotice('Saved. ' + entries.length + ' total entries.', false);
+      // Reset form
+      document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+      document.querySelectorAll('.etag').forEach(t => t.classList.remove('selected'));
+      document.getElementById('entryNote').value = '';
+      selectedMood = null; selectedEmotions = [];
+      render();
+    }
+
+    function showNotice(msg, isErr) {
+      const el = document.getElementById('saveNotice');
+      el.textContent = msg;
+      el.style.color = isErr ? 'var(--danger)' : 'var(--primary-dark)';
+      setTimeout(() => { el.textContent = ''; }, 3000);
+    }
+
+    function deleteEntry(date) {
+      let entries = getEntries().filter(e => e.date !== date);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      render();
+    }
+
+    function render() {
+      const entries = getEntries();
+      // History
+      const hist = document.getElementById('historyList');
+      if (entries.length === 0) {
+        hist.innerHTML = '<div class="empty">No entries yet. Log your first mood above.</div>';
+        document.getElementById('chartCard').style.display = 'none';
+        return;
+      }
+      hist.innerHTML = entries.slice().reverse().map(e =>
+        `<div class="entry"><div class="e-head"><span class="e-date">${e.date}</span>` +
+        `<span><span class="e-mood" style="color:${moodColors[e.mood]}">${moodEmojis[e.mood]} ${moodWords[e.mood]} (${e.mood}/5)</span>` +
+        ` <button class="e-del" onclick="deleteEntry('${e.date}')">delete</button></span></div>` +
+        (e.emotions.length ? `<div class="e-tags">${e.emotions.join(', ')}</div>` : '') +
+        (e.note ? `<div class="e-note">${escapeHtml(e.note)}</div>` : '') + `</div>`
+      ).join('');
+      // Chart
+      document.getElementById('chartCard').style.display = 'block';
+      const chart = document.getElementById('chart');
+      chart.innerHTML = entries.map(e =>
+        `<div class="bar" style="height:${e.mood*20}%;background:${moodColors[e.mood]}" >` +
+        `<span class="tip">${e.date}: ${moodWords[e.mood]}</span></div>`
+      ).join('');
+      // Summary
+      const avg = (entries.reduce((s,e) => s+e.mood, 0) / entries.length).toFixed(2);
+      const recent = entries.slice(-7);
+      const avgRecent = (recent.reduce((s,e) => s+e.mood, 0) / recent.length).toFixed(2);
+      document.getElementById('chartSummary').textContent =
+        `${entries.length} entries. Overall average: ${avg}/5. Last 7 entries average: ${avgRecent}/5.`;
+    }
+
+    function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function exportData() {
+      const entries = getEntries();
+      if (entries.length === 0) { alert('No entries to export.'); return; }
+      const blob = new Blob([JSON.stringify(entries, null, 2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'cbt-mood-tracker-' + new Date().toISOString().slice(0,10) + '.json';
+      a.click();
+    }
+
+    function clearAll() {
+      if (confirm('Delete all mood entries? This cannot be undone.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        render();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
