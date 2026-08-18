@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free CBT Thought Record Tool — Challenge Negative Thoughts Online</title>
+  <meta name="description" content="A free interactive CBT thought record tool. Identify cognitive distortions, challenge anxious thoughts, and re-rate your emotions in 5 minutes. No signup required.">
+  <meta name="keywords" content="cbt thought record, thought record template, cbt worksheet, free cbt tool, thought record online, cbt journal, cognitive distortions, anxiety worksheet, notion cbt template">
+  <meta property="og:title" content="Free CBT Thought Record Tool — Challenge Negative Thoughts">
+  <meta property="og:description" content="Interactive CBT thought record. Identify distortions, challenge thoughts, feel better in 5 minutes. Free, no signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/473185670/arbitrage-assets/main/pinterest/pin1_cbt_benefits.png">
+  <link rel="canonical" href="https://473185670.github.io/arbitrage-assets/seo/free-cbt-thought-record-tool.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free CBT Thought Record Tool",
+    "description": "Interactive CBT thought record to identify cognitive distortions and challenge negative thoughts. Free, no signup required.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "url": "https://473185670.github.io/arbitrage-assets/seo/free-cbt-thought-record-tool.html"
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f0f7f4;
+      --primary: #4a9d7c;
+      --primary-dark: #3a8268;
+      --accent: #6cbf8a;
+      --accent-light: #d4ebe0;
+      --text: #2d4a3e;
+      --text-muted: #6b8a7e;
+      --card: #ffffff;
+      --border: #c8ddd4;
+      --danger: #c17a7a;
+      --warning: #d4a55a;
+      --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .hero p { opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 0.95rem; }
+    .hero .badge {
+      display: inline-block; background: rgba(255,255,255,0.2);
+      padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;
+      margin-top: 0.75rem;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .step {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(74,157,124,0.06);
+    }
+    .step-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .step-num {
+      background: var(--primary); color: white; width: 28px; height: 28px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; flex-shrink: 0;
+    }
+    .step-title { font-weight: 600; font-size: 1.02rem; }
+    .step-hint { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    textarea, input[type="text"], input[type="date"] {
+      width: 100%; padding: 0.6rem; border: 1px solid var(--border);
+      border-radius: 6px; font-size: 0.92rem; font-family: inherit;
+      background: #fafdfb; color: var(--text); resize: vertical;
+    }
+    textarea:focus, input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+    textarea { min-height: 60px; }
+    .emotion-row { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .emotion-row input[type="text"] { flex: 1; min-width: 120px; }
+    .slider-group { flex: 1; min-width: 150px; }
+    .slider-group label { font-size: 0.8rem; color: var(--text-muted); }
+    input[type="range"] { width: 100%; accent-color: var(--primary); }
+    .slider-val { font-weight: 700; color: var(--primary); font-size: 0.85rem; }
+    .distortions { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.4rem; }
+    .distortion-chip {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.4rem 0.6rem; border: 1px solid var(--border);
+      border-radius: 6px; cursor: pointer; font-size: 0.82rem;
+      background: #fafdfb; transition: all 0.15s;
+    }
+    .distortion-chip:hover { border-color: var(--accent); }
+    .distortion-chip.active { background: var(--accent-light); border-color: var(--primary); color: var(--primary-dark); }
+    .distortion-chip input { accent-color: var(--primary); }
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .btn {
+      padding: 0.6rem 1.2rem; border: none; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.15s;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-secondary { background: var(--accent-light); color: var(--primary-dark); }
+    .btn-secondary:hover { background: var(--accent); color: white; }
+    .btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .cta-box {
+      background: linear-gradient(135deg, var(--accent-light) 0%, #e8f5ee 100%);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem; margin: 2rem 0; text-align: center;
+    }
+    .cta-box h2 { color: var(--primary-dark); margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .cta-box p { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+    .cta-box .btn { margin: 0.25rem; }
+    .saved-indicator {
+      position: fixed; bottom: 1rem; right: 1rem; background: var(--primary);
+      color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.82rem;
+      opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 100;
+    }
+    .saved-indicator.show { opacity: 1; }
+    .history-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.75rem; margin-bottom: 0.5rem; font-size: 0.85rem;
+    }
+    .history-item .meta { color: var(--text-muted); font-size: 0.78rem; }
+    .history-item .del { float: right; color: var(--danger); cursor: pointer; font-size: 0.78rem; }
+    .seo-content { margin-top: 2rem; font-size: 0.88rem; color: var(--text-muted); }
+    .seo-content h2 { color: var(--text); font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+    .seo-content p { margin-bottom: 0.75rem; }
+    .seo-content ul { margin: 0 0 0.75rem 1.5rem; }
+    .seo-content li { margin-bottom: 0.3rem; }
+    footer { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: 0.8rem; }
+    footer a { color: var(--primary); }
+    @media (max-width: 600px) {
+      .before-after { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.4rem; }
+    }
+    @media print {
+      .hero, .actions, .cta-box, .seo-content, footer, .saved-indicator { display: none; }
+      .step { box-shadow: none; border: 1px solid #999; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>CBT Thought Record Tool</h1>
+  <p>Identify the situation, catch your automatic thoughts, challenge them with evidence, and build a balanced perspective — in 5 minutes.</p>
+  <span class="badge">Free &bull; No signup &bull; Saves to your browser</span>
+</div>
+
+<div class="container">
+
+  <!-- Step 1: Situation -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">Situation</div>
+    </div>
+    <div class="step-hint">What happened? Be specific and factual. (e.g., "My manager sent a short email asking to talk.")</div>
+    <input type="date" id="date" style="margin-bottom:0.5rem">
+    <textarea id="situation" placeholder="Describe the triggering situation..."></textarea>
+  </div>
+
+  <!-- Step 2: Automatic Thoughts -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Automatic Thoughts</div>
+    </div>
+    <div class="step-hint">What went through your mind? What did the thought mean to you?</div>
+    <textarea id="thoughts" placeholder="e.g., 'I'm going to get fired. I always mess things up.'"></textarea>
+  </div>
+
+  <!-- Step 3: Emotions + Intensity (before) -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Emotions &amp; Intensity (Before)</div>
+    </div>
+    <div class="step-hint">What did you feel? Rate intensity 0–100%.</div>
+    <div class="emotion-row">
+      <input type="text" id="emotion" placeholder="e.g., anxious, angry, sad">
+      <div class="slider-group">
+        <label>Intensity: <span class="slider-val" id="intensityBeforeVal">50</span>%</label>
+        <input type="range" id="intensityBefore" min="0" max="100" value="50">
+      </div>
+    </div>
+    <div class="step-hint" style="margin-top:0.5rem">Body sensation (optional):</div>
+    <input type="text" id="bodySensation" placeholder="e.g., tight chest, racing heart, tension in shoulders">
+  </div>
+
+  <!-- Step 4: Cognitive Distortions -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">Cognitive Distortions</div>
+    </div>
+    <div class="step-hint">Which thinking traps are present? Check all that apply.</div>
+    <div class="distortions" id="distortions">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- Step 5: Evidence For & Against -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">Evidence</div>
+    </div>
+    <div class="step-hint">What facts support the thought? What facts contradict it?</div>
+    <label style="font-size:0.82rem;color:var(--text-muted)">Evidence <strong>for</strong> the thought:</label>
+    <textarea id="evidenceFor" placeholder="Facts that support the automatic thought..." style="margin:0.3rem 0 0.6rem"></textarea>
+    <label style="font-size:0.82rem;color:var(--text-muted)">Evidence <strong>against</strong> the thought:</label>
+    <textarea id="evidenceAgainst" placeholder="Facts that contradict the automatic thought..." style="margin-top:0.3rem"></textarea>
+  </div>
+
+  <!-- Step 6: Balanced Thought -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div class="step-title">Balanced Thought</div>
+    </div>
+    <div class="step-hint">A fair, realistic alternative perspective that considers all the evidence.</div>
+    <textarea id="balancedThought" placeholder="e.g., 'My manager wants to talk, but that doesn't mean I'm fired. I've had good reviews. I'll wait and see what the meeting is about.'"></textarea>
+  </div>
+
+  <!-- Step 7: Re-rate Emotion -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div class="step-title">Re-rate Emotion Intensity (After)</div>
+    </div>
+    <div class="step-hint">How intense is the emotion now, after completing this record?</div>
+    <div class="slider-group">
+      <label>Intensity: <span class="slider-val" id="intensityAfterVal">30</span>%</label>
+      <input type="range" id="intensityAfter" min="0" max="100" value="30">
+    </div>
+    <div id="intensityChange" style="margin-top:0.5rem;font-size:0.85rem;color:var(--primary-dark)"></div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn btn-primary" onclick="saveRecord()">Save Record</button>
+    <button class="btn btn-secondary" onclick="exportJSON()">Export JSON</button>
+    <button class="btn btn-outline" onclick="window.print()">Print / PDF</button>
+    <button class="btn btn-outline" onclick="clearForm()">New Record</button>
+  </div>
+
+  <!-- History -->
+  <div id="historySection" style="display:none">
+    <h2 style="font-size:1.1rem;margin-bottom:0.75rem;color:var(--text)">Your Saved Records</h2>
+    <div id="historyList"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>Want the Full Notion Template?</h2>
+    <p>Get the complete CBT Thought Record as a duplicatable Notion template — track patterns over weeks, see your progress, and build a calmer mind daily.</p>
+    <a href="https://4043969836017.gumroad.com/l/yyzll" target="_blank" rel="noopener" class="btn btn-primary">Get the Notion Template ($7)</a>
+    <a href="https://pale-earth-1ab.notion.site/CBT-Thought-Record-3c0bf3457ff3816aade3f0c246be6c06" target="_blank" rel="noopener" class="btn btn-secondary">Preview the Template</a>
+  </div>
+
+  <!-- SEO Content -->
+  <div class="seo-content">
+    <h2>What Is a CBT Thought Record?</h2>
+    <p>A CBT thought record is a structured worksheet used in Cognitive Behavioral Therapy to help you identify, examine, and restructure unhelpful automatic thoughts. It is one of the most evidence-based tools in clinical psychology, with decades of research showing it reduces anxiety and depression when practiced regularly.</p>
+    <p>The thought record works by creating a gap between a triggering situation and your emotional response. Instead of accepting your first interpretation as truth, you systematically look for evidence — both for and against your automatic thought — and then construct a balanced alternative.</p>
+
+    <h2>How to Use This Thought Record Tool</h2>
+    <ul>
+      <li><strong>Step 1 — Situation:</strong> Describe what happened objectively, as if a camera recorded it.</li>
+      <li><strong>Step 2 — Automatic Thoughts:</strong> Write what went through your mind. These are the hot, immediate interpretations.</li>
+      <li><strong>Step 3 — Emotions:</strong> Name the emotion and rate its intensity (0–100%). Note where you feel it in your body.</li>
+      <li><strong>Step 4 — Distortions:</strong> Identify which cognitive distortions are present in your thinking.</li>
+      <li><strong>Step 5 — Evidence:</strong> List facts that support AND contradict the automatic thought.</li>
+      <li><strong>Step 6 — Balanced Thought:</strong> Write a new perspective that accounts for all the evidence.</li>
+      <li><strong>Step 7 — Re-rate:</strong> Score the emotion intensity again. It usually drops.</li>
+    </ul>
+
+    <h2>10 Common Cognitive Distortions</h2>
+    <ul>
+      <li><strong>All-or-nothing thinking:</strong> Seeing things in black-and-white categories.</li>
+      <li><strong>Overgeneralization:</strong> A single event becomes a never-ending pattern.</li>
+      <li><strong>Mental filter:</strong> Dwelling on one negative detail and ignoring the rest.</li>
+      <li><strong>Disqualifying the positive:</strong> Rejecting good experiences as if they don't count.</li>
+      <li><strong>Jumping to conclusions:</strong> Mind-reading or fortune-telling without evidence.</li>
+      <li><strong>Magnification / minimization:</strong> Exaggerating the bad or shrinking the good.</li>
+      <li><strong>Emotional reasoning:</strong> "I feel it, so it must be true."</li>
+      <li><strong>Should statements:</strong> Rigid rules that create guilt or pressure.</li>
+      <li><strong>Labeling:</strong> Attaching a fixed label to yourself instead of describing the behavior.</li>
+      <li><strong>Personalization &amp; blame:</strong> Taking responsibility for things outside your control.</li>
+    </ul>
+
+    <h2>Why Use Notion for Thought Records?</h2>
+    <p>While this free tool is great for a single session, a <a href="https://4043969836017.gumroad.com/l/yyzll">Notion thought record template</a> lets you build a lasting database. You can track patterns over weeks, filter by distortion type, see which situations trigger you most, and watch your emotion intensity trends improve over time. The structured Notion database makes it easy to review your progress with a therapist or on your own.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Free CBT Thought Record Tool &bull; Built with care &bull; <a href="https://4043969836017.gumroad.com/l/yyzll">Notion Template</a> &bull; Not a substitute for professional mental health care.</p>
+</footer>
+
+<div class="saved-indicator" id="savedIndicator">Saved to browser</div>
+
+<script>
+const DISTORTIONS = [
+  "All-or-nothing thinking",
+  "Overgeneralization",
+  "Mental filter",
+  "Disqualifying the positive",
+  "Jumping to conclusions (mind-reading)",
+  "Jumping to conclusions (fortune-telling)",
+  "Magnification (catastrophizing)",
+  "Minimization",
+  "Emotional reasoning",
+  "Should statements",
+  "Labeling",
+  "Personalization & blame",
+];
+
+// Build distortion chips
+const distContainer = document.getElementById('distortions');
+DISTORTIONS.forEach((d, i) => {
+  const chip = document.createElement('label');
+  chip.className = 'distortion-chip';
+  chip.innerHTML = `<input type="checkbox" data-dist="${i}"> ${d}`;
+  chip.querySelector('input').addEventListener('change', () => {
+    chip.classList.toggle('active', chip.querySelector('input').checked);
+    autoSave();
+  });
+  distContainer.appendChild(chip);
+});
+
+// Slider live updates
+const ib = document.getElementById('intensityBefore');
+const ia = document.getElementById('intensityAfter');
+ib.addEventListener('input', () => {
+  document.getElementById('intensityBeforeVal').textContent = ib.value;
+  updateChange();
+  autoSave();
+});
+ia.addEventListener('input', () => {
+  document.getElementById('intensityAfterVal').textContent = ia.value;
+  updateChange();
+  autoSave();
+});
+
+function updateChange() {
+  const diff = parseInt(ib.value) - parseInt(ia.value);
+  const el = document.getElementById('intensityChange');
+  if (diff > 0) el.textContent = `Intensity dropped by ${diff}% — great work!`;
+  else if (diff < 0) el.textContent = `Intensity increased by ${-diff}%. Consider revisiting the balanced thought.`;
+  else el.textContent = `Intensity unchanged. That's okay — awareness is the first step.`;
+}
+
+// Auto-save to localStorage (current form)
+let saveTimer;
+function autoSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    const data = collectFormData();
+    localStorage.setItem('cbt_current_draft', JSON.stringify(data));
+  }, 800);
+}
+
+function collectFormData() {
+  return {
+    date: document.getElementById('date').value,
+    situation: document.getElementById('situation').value,
+    thoughts: document.getElementById('thoughts').value,
+    emotion: document.getElementById('emotion').value,
+    intensityBefore: ib.value,
+    bodySensation: document.getElementById('bodySensation').value,
+    distortions: [...document.querySelectorAll('.distortion-chip input:checked')].map(c => DISTORTIONS[parseInt(c.dataset.dist)]),
+    evidenceFor: document.getElementById('evidenceFor').value,
+    evidenceAgainst: document.getElementById('evidenceAgainst').value,
+    balancedThought: document.getElementById('balancedThought').value,
+    intensityAfter: ia.value,
+    savedAt: new Date().toISOString(),
+  };
+}
+
+// Load draft on page open
+function loadDraft() {
+  const draft = localStorage.getItem('cbt_current_draft');
+  if (!draft) return;
+  try {
+    const d = JSON.parse(draft);
+    document.getElementById('date').value = d.date || '';
+    document.getElementById('situation').value = d.situation || '';
+    document.getElementById('thoughts').value = d.thoughts || '';
+    document.getElementById('emotion').value = d.emotion || '';
+    ib.value = d.intensityBefore || 50;
+    document.getElementById('intensityBeforeVal').textContent = ib.value;
+    document.getElementById('bodySensation').value = d.bodySensation || '';
+    document.getElementById('evidenceFor').value = d.evidenceFor || '';
+    document.getElementById('evidenceAgainst').value = d.evidenceAgainst || '';
+    document.getElementById('balancedThought').value = d.balancedThought || '';
+    ia.value = d.intensityAfter || 30;
+    document.getElementById('intensityAfterVal').textContent = ia.value;
+    if (d.distortions) {
+      d.distortions.forEach(dist => {
+        const idx = DISTORTIONS.indexOf(dist);
+        if (idx >= 0) {
+          const chip = document.querySelectorAll('.distortion-chip')[idx];
+          chip.querySelector('input').checked = true;
+          chip.classList.add('active');
+        }
+      });
+    }
+    updateChange();
+  } catch(e) {}
+}
+
+// Save record to history
+function saveRecord() {
+  const data = collectFormData();
+  if (!data.situation && !data.thoughts) {
+    alert('Please fill in at least the situation and thoughts before saving.');
+    return;
+  }
+  let history = JSON.parse(localStorage.getItem('cbt_history') || '[]');
+  history.unshift(data);
+  if (history.length > 50) history = history.slice(0, 50);
+  localStorage.setItem('cbt_history', JSON.stringify(history));
+  showSaved();
+  renderHistory();
+}
+
+function showSaved() {
+  const el = document.getElementById('savedIndicator');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('cbt_history') || '[]');
+  const section = document.getElementById('historySection');
+  const list = document.getElementById('historyList');
+  if (history.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = history.map((r, i) => `
+    <div class="history-item">
+      <span class="del" onclick="deleteRecord(${i})">delete</span>
+      <strong>${r.date || r.savedAt.slice(0,10)}</strong> — ${r.emotion || 'emotion?'} (${r.intensityBefore||'?'}% &rarr; ${r.intensityAfter||'?'}%)
+      <div class="meta">${(r.situation||'').slice(0,80)}${(r.situation||'').length>80?'...':''}</div>
+      ${r.distortions && r.distortions.length ? `<div class="meta">Distortions: ${r.distortions.join(', ')}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function deleteRecord(i) {
+  let history = JSON.parse(localStorage.getItem('cbt_history') || '[]');
+  history.splice(i, 1);
+  localStorage.setItem('cbt_history', JSON.stringify(history));
+  renderHistory();
+}
+
+function exportJSON() {
+  const data = collectFormData();
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cbt-thought-record-${data.date || new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function clearForm() {
+  if (!confirm('Start a new record? Current draft will be cleared.')) return;
+  document.querySelectorAll('textarea, input[type="text"]').forEach(el => el.value = '');
+  document.querySelectorAll('.distortion-chip input').forEach(el => { el.checked = false; el.parentElement.classList.remove('active'); });
+  ib.value = 50; ia.value = 30;
+  document.getElementById('intensityBeforeVal').textContent = '50';
+  document.getElementById('intensityAfterVal').textContent = '30';
+  document.getElementById('date').value = new Date().toISOString().slice(0,10);
+  updateChange();
+  localStorage.removeItem('cbt_current_draft');
+}
+
+// Listen for auto-save on all inputs
+document.querySelectorAll('textarea, input[type="text"], input[type="date"]').forEach(el => {
+  el.addEventListener('input', autoSave);
+});
+
+// Init
+document.getElementById('date').value = new Date().toISOString().slice(0,10);
+loadDraft();
+renderHistory();
+updateChange();
+</script>
+
+</body>
+</html>
