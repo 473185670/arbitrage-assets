@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://473185670.github.io/arbitrage-assets/sitemap.xml
+Sitemap: https://473185670.github.io/cbt-toolkit/sitemap.xml
