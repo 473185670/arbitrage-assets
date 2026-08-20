@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Context-Dependent Core Belief Detector (CBT Tool)</title>
+  <meta name="description" content="Free interactive CBT tool that detects core beliefs based on both your thought AND the life domain. The same thought means different things at work vs in relationships. No signup.">
+  <meta name="keywords" content="core belief detector, cbt core beliefs, context-dependent classification, downward arrow technique, cbt worksheet, free cbt tool, core beliefs cbt, negative core beliefs">
+  <meta property="og:title" content="Free Context-Dependent Core Belief Detector">
+  <meta property="og:description" content="The same thought means different things in different contexts. This CBT tool detects core beliefs based on both your thought and your life domain.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://473185670.github.io/cbt-toolkit/seo/cbt-context-belief-detector.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Context-Dependent Core Belief Detector",
+    "description": "Free CBT tool that detects core beliefs using context-dependent classification. The same thought maps to different beliefs depending on the life domain.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "url": "https://473185670.github.io/cbt-toolkit/seo/cbt-context-belief-detector.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What is a core belief in CBT?", "acceptedAnswer": {"@type": "Answer", "text": "Core beliefs are deep, fundamental beliefs about yourself, others, and the world. They develop early in life and shape how you interpret situations. Common negative core beliefs include 'I'm incompetent,' 'I'm unlovable,' and 'I'm worthless.'"}},
+      {"@type": "Question", "name": "Why does the same thought lead to different core beliefs?", "acceptedAnswer": {"@type": "Answer", "text": "Because context changes meaning. 'I'm not good enough' at work points to a competence belief ('I'm incompetent'), while the same phrase in a relationship points to a social-worth belief ('I'm unlovable'). A classifier that ignores context will misclassify thoughts because the same words mean different things in different life domains."}},
+      {"@type": "Question", "name": "How is this different from a regular thought record?", "acceptedAnswer": {"@type": "Answer", "text": "A regular thought record or distortion checker classifies a thought in isolation. This tool takes TWO inputs 鈥?the thought and the life domain 鈥?and uses the domain to disambiguate which core belief is activated. This is context-dependent classification, the rule-based equivalent of attention mechanisms in NLP."}}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f0f7f4;
+      --primary: #4a9d7c;
+      --primary-dark: #3a8268;
+      --accent: #6cbf8a;
+      --accent-light: #d4ebe0;
+      --text: #2d4a3e;
+      --text-muted: #6b8a7e;
+      --card: #ffffff;
+      --border: #c8ddd4;
+      --danger: #c17a7a;
+      --warning: #d4a55a;
+      --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .hero p { opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .container { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .card h2 { color: var(--primary-dark); margin-bottom: 0.75rem; font-size: 1.2rem; }
+    label { display: block; font-weight: 600; margin-bottom: 0.3rem; color: var(--text); }
+    textarea, select {
+      width: 100%; padding: 0.6rem; border: 1px solid var(--border);
+      border-radius: 6px; font-size: 1rem; font-family: inherit; background: var(--card);
+      color: var(--text);
+    }
+    textarea { min-height: 80px; resize: vertical; margin-bottom: 1rem; }
+    select { margin-bottom: 1rem; cursor: pointer; }
+    button {
+      background: var(--primary); color: white; border: none; padding: 0.7rem 1.5rem;
+      border-radius: 6px; font-size: 1rem; cursor: pointer; font-weight: 600;
+      transition: background 0.2s;
+    }
+    button:hover { background: var(--primary-dark); }
+    .result { margin-top: 1rem; }
+    .belief-item {
+      background: var(--accent-light); border-left: 4px solid var(--primary);
+      padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 0.75rem;
+    }
+    .belief-name { font-weight: 700; color: var(--primary-dark); font-size: 1.1rem; }
+    .belief-match { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .belief-reframe { margin-top: 0.5rem; font-size: 0.95rem; }
+    .context-insight {
+      background: #fff8e1; border-left: 4px solid var(--warning);
+      padding: 0.75rem 1rem; border-radius: 6px; margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .context-insight strong { color: #b27d00; }
+    .none-found { color: var(--text-muted); font-style: italic; text-align: center; padding: 1rem; }
+    .cross-link {
+      display: block; background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+      text-decoration: none; color: var(--text); transition: border-color 0.2s;
+    }
+    .cross-link:hover { border-color: var(--primary); }
+    .cross-link strong { color: var(--primary-dark); }
+    .cross-link span { font-size: 0.85rem; color: var(--text-muted); }
+    .disclaimer {
+      background: #fff3cd; border-radius: 8px; padding: 0.75rem 1rem;
+      font-size: 0.85rem; color: #856404; margin-bottom: 1rem;
+    }
+    footer { text-align: center; padding: 1rem; color: var(--text-muted); font-size: 0.85rem; }
+    footer a { color: var(--primary); }
+    .example-btn { background: var(--accent); font-size: 0.85rem; padding: 0.4rem 0.8rem; margin-left: 0.5rem; }
+    .example-btn:hover { background: var(--primary); }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Context-Dependent Core Belief Detector</h1>
+    <p>The same thought means different things in different contexts. This tool detects your core belief based on both <strong>what</strong> you thought and <strong>where</strong> it happened.</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>1. What was your automatic thought?</h2>
+      <label for="thought">Negative thought that popped into your head:</label>
+      <textarea id="thought" placeholder="e.g., I'm not good enough"></textarea>
+
+      <label for="domain">2. Which life domain did this come up in?</label>
+      <select id="domain">
+        <option value="">鈥?Select a domain 鈥?/option>
+        <option value="work">Work / Achievement / Career</option>
+        <option value="social">Relationships / Social / Friendship</option>
+        <option value="romantic">Romantic / Dating / Partnership</option>
+        <option value="family">Family / Parenting / Relatives</option>
+        <option value="appearance">Appearance / Body Image</option>
+        <option value="competence">Competence / Intelligence / Skill</option>
+        <option value="social_worth">Social Worth / Likability / Acceptance</option>
+      </select>
+
+      <button onclick="detect()">Detect Core Belief</button>
+      <button class="example-btn" onclick="loadExample()">Try Example</button>
+    </div>
+
+    <div class="card" id="resultCard" style="display:none;">
+      <h2>Detected Core Belief</h2>
+      <div id="result" class="result"></div>
+    </div>
+
+    <div class="card">
+      <h2>Why Context Matters</h2>
+      <p>A thought like <em>"I'm not good enough"</em> is ambiguous on its own. But add context and it becomes specific:</p>
+      <ul style="margin: 0.5rem 0 0.5rem 1.5rem; color: var(--text-muted);">
+        <li>At <strong>work</strong> &rarr; "I'm <strong>incompetent</strong>" (competence belief)</li>
+        <li>In a <strong>relationship</strong> &rarr; "I'm <strong>unlovable</strong>" (social-worth belief)</li>
+        <li>With <strong>family</strong> &rarr; "I'm a <strong>burden</strong>" (belonging belief)</li>
+      </ul>
+      <p style="margin-top:0.5rem; font-size:0.9rem; color: var(--text-muted);">A classifier that ignores context will misclassify thoughts. This tool uses a <strong>domain-keyed lookup table</strong> 鈥?the rule-based equivalent of an attention mechanism. No AI, no NLP, no transformer required.</p>
+    </div>
+
+    <div class="card">
+      <h2>The 13 Core Beliefs</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">I'm worthless &middot; I'm unlovable &middot; I'm incompetent &middot; I'm a failure &middot; I'm not good enough &middot; I'm defective &middot; I'm unimportant &middot; I'm a burden &middot; I'm stupid &middot; I'm boring &middot; I'm ugly &middot; I'm weak &middot; Other</p>
+      <p style="margin-top:0.5rem; font-size:0.85rem; color: var(--text-muted);">Each domain activates a different subset. The same surface thought resolves to different beliefs depending on which domain you select.</p>
+    </div>
+
+    <a class="cross-link" href="https://473185670.github.io/cbt-toolkit/seo/cbt-for-low-self-esteem.html"><strong>&rarr; CBT for Low Self-Esteem (Full Guide + Positive Data Log)</strong><br><span>Complete guide to identifying and restructuring core beliefs with the downward arrow technique.</span></a>
+    <a class="cross-link" href="https://473185670.github.io/cbt-toolkit/seo/cognitive-distortion-checker.html"><strong>&rarr; Cognitive Distortion Checker</strong><br><span>Identify which of 11 thinking traps are in your thought. Context-free classification.</span></a>
+    <a class="cross-link" href="https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html"><strong>&rarr; CBT Toolkit Hub (All Free Tools)</strong><br><span>The front door to the full CBT toolkit 鈥?all interactive tools in one place.</span></a>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This is an educational self-help tool based on CBT principles, not a substitute for professional diagnosis or treatment. If you are in crisis or having thoughts of suicide, call <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or your local emergency number immediately.
+    </div>
+
+    <footer>
+      Free CBT tool &middot; part of the <a href="https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html">CBT Toolkit</a> &middot;
+      <a href="https://4043969836017.gumroad.com/l/yyzll">Notion template ($7)</a> &middot;
+      Evidence-based &middot; No signup &middot; Your data stays in your browser
+    </footer>
+  </div>
+
+  <script>
+    // ============================================================
+    // CONTEXT-DEPENDENT CORE BELIEF DETECTOR
+    // The same thought maps to different core beliefs depending on
+    // the life domain. This is a 2D classification: f(thought, domain) -> belief
+    // No AI, no NLP, no attention mechanism 鈥?just a domain-keyed map.
+    // ============================================================
+
+    var DOMAINS = {
+      work: {
+        label: "Work / Achievement",
+        beliefs: [
+          { belief: "I'm incompetent", patterns: ["can't do","not good enough","don't know how","going to fail","mess up","not capable","in over my head"],
+            reframe: "Competence is built through practice, not innate. What specific skill gap can you identify and address? One mistake doesn't define your ability 鈥?what's the evidence from past successes?" },
+          { belief: "I'm a failure", patterns: ["failed","failure","fired","let go","didn't get","rejected","passed over","didn't get the","lost the"],
+            reframe: "A failure is an event, not an identity. What did you learn? What would you do differently? Everyone who attempts difficult things fails sometimes 鈥?that's how growth works." },
+          { belief: "I'm stupid", patterns: ["stupid","idiot","dumb","slow","can't understand","everyone gets it","behind"],
+            reframe: "Intelligence is not a single fixed trait. You may process this differently or need more time 鈥?that's normal. What specifically is hard, and what would help you understand it?" },
+          { belief: "I'm defective", patterns: ["broken","something wrong with me","not normal","don't fit","don't belong here"],
+            reframe: "Different is not defective. What specific thing feels 'wrong,' and is it actually a problem or just a difference? Many successful people felt like misfits in their early careers." }
+        ]
+      },
+      social: {
+        label: "Relationships / Social",
+        beliefs: [
+          { belief: "I'm unlovable", patterns: ["not good enough","nobody loves","unlovable","rejected","left","abandoned","don't deserve"],
+            reframe: "Being rejected by one person doesn't mean you're unlovable. What's the evidence that people DO care about you? Love is not earned by being 'good enough' 鈥?it's given freely by those who choose to." },
+          { belief: "I'm boring", patterns: ["boring","nothing to say","dull","uninteresting","awkward","nobody wants to hear"],
+            reframe: "Quiet is not boring. You don't need to be entertaining to be valued. What do you care about? Authentic interest in others is more connecting than being interesting." },
+          { belief: "I'm unimportant", patterns: ["don't matter","nobody cares","invisible","forgotten","replaceable","nobody noticed"],
+            reframe: "People show they care differently than you might expect. What's the evidence someone HAS noticed or cared? Your impact is often invisible to you but felt by others." },
+          { belief: "I'm defective", patterns: ["broken","something wrong with me","not normal","weird","creepy","off-putting"],
+            reframe: "Social awkwardness is common and learnable, not a permanent defect. What specific behavior could you practice? Most people are too focused on themselves to notice your perceived flaws." }
+        ]
+      },
+      romantic: {
+        label: "Romantic / Dating",
+        beliefs: [
+          { belief: "I'm unlovable", patterns: ["not good enough","nobody will love","unlovable","rejected","dumped","single","alone","nobody wants"],
+            reframe: "Relationship status is not a measure of lovability. Many deeply lovable people are single. What would a friend say about your worthiness of love? Rejection is about fit, not about your value." },
+          { belief: "I'm defective", patterns: ["broken","damaged goods","too much baggage","not normal","nobody would want","unfixable"],
+            reframe: "Everyone has history. 'Baggage' is life experience 鈥?it makes you more empathetic, not less lovable. What specifically feels 'broken,' and has anyone actually been put off by it, or is that your assumption?" },
+          { belief: "I'm ugly", patterns: ["ugly","unattractive","not pretty","not handsome","gross","repulsive","nobody would look"],
+            reframe: "Attraction is subjective and multi-dimensional. Personality, confidence, and kindness dramatically affect perceived attractiveness. What do people you trust actually say about your appearance?" },
+          { belief: "I'm a burden", patterns: ["too much","hard to love","exhausting","needy","clingy","too complicated"],
+            reframe: "Having needs is not being a burden. Healthy relationships involve mutual support. What specifically feels like 'too much,' and have you communicated it or are you assuming?" }
+        ]
+      },
+      family: {
+        label: "Family",
+        beliefs: [
+          { belief: "I'm a burden", patterns: ["burden","too much","hard to deal with","they'd be better off","exhausting","stress on them"],
+            reframe: "Family relationships are mutual 鈥?they also receive from you. What do you contribute that you might be discounting? 'Better off without me' is a thought to examine with evidence, not accept as fact." },
+          { belief: "I'm unlovable", patterns: ["not good enough","they don't love","unlovable","disowned","disappointed","not accepted"],
+            reframe: "Family approval is not the same as lovability. Some families struggle to express love due to their own limitations. What's the evidence they DO care, even if imperfectly expressed?" },
+          { belief: "I'm worthless", patterns: ["worthless","don't matter","nobody cares","better off without me","no value"],
+            reframe: "Worth is not determined by family reaction. What would an objective observer say about your value? The feeling of worthlessness is a symptom to examine, not a fact to accept." },
+          { belief: "I'm defective", patterns: ["broken","something wrong with me","not normal","black sheep","different from them"],
+            reframe: "Being different from your family is not a defect 鈥?it's often the sign of growth. What specifically feels 'wrong,' and is it actually a problem or just a difference from family norms?" }
+        ]
+      },
+      appearance: {
+        label: "Appearance / Body",
+        beliefs: [
+          { belief: "I'm ugly", patterns: ["ugly","fat","disgusting","unattractive","gross","hideous","repulsive"],
+            reframe: "Body image thoughts are among the most distorted. What would a kind friend say? Attraction is subjective and multi-dimensional. Your body's function and health matter more than its appearance." },
+          { belief: "I'm worthless", patterns: ["worthless","nobody will want","valueless","pathetic","pointless"],
+            reframe: "Worth is not appearance. What are your non-physical qualities that people value? The connection between appearance and worth is a cultural message, not a truth." },
+          { belief: "I'm defective", patterns: ["broken","deformed","something wrong","not normal","flawed"],
+            reframe: "Bodies vary enormously. What specifically feels 'wrong,' and who defined 'normal'? Body diversity is natural. The defect is in the comparison, not the body." },
+          { belief: "I'm unlovable", patterns: ["unlovable","nobody will love","not good enough","nobody could love this"],
+            reframe: "Love is not conditional on appearance. What's the evidence people care about you as you are? The most loving relationships are built on connection, not looks." }
+        ]
+      },
+      competence: {
+        label: "Competence / Intelligence",
+        beliefs: [
+          { belief: "I'm incompetent", patterns: ["can't do","not good enough","don't know how","incapable","incompetent","not cut out"],
+            reframe: "Competence is developed, not fixed. What specific skill can you build? Everyone starts not knowing. What's one step you could take to grow in this area?" },
+          { belief: "I'm stupid", patterns: ["stupid","idiot","dumb","slow","can't understand","brain doesn't work","not smart enough"],
+            reframe: "Intelligence is multi-faceted. You may excel in areas that aren't measured here. What type of thinking are you good at? Speed is not the same as depth." },
+          { belief: "I'm a failure", patterns: ["failure","loser","will fail","can't succeed","never amount to anything"],
+            reframe: "Failure is an event, not an identity. What did this attempt teach you? The most competent people failed the most 鈥?because they tried the most." },
+          { belief: "I'm not good enough", patterns: ["not good enough","not smart enough","not talented","average","mediocre","nothing special"],
+            reframe: "'Good enough' compared to what? Most people are average at most things 鈥?that's normal. What do you uniquely bring? Excellence in one area matters more than being above average in all." }
+        ]
+      },
+      social_worth: {
+        label: "Social Worth / Likability",
+        beliefs: [
+          { belief: "I'm unlovable", patterns: ["unlovable","nobody likes","hard to love","unworthy of love","nobody could love"],
+            reframe: "Likability is not a fixed trait. What do people who know you well actually say? Love-worthiness is not earned 鈥?it's inherent. The belief that you must earn love is itself a distortion." },
+          { belief: "I'm boring", patterns: ["boring","nothing to say","dull","uninteresting","have nothing to offer"],
+            reframe: "Being a good listener IS contributing. You don't need to be the entertainer. What do you care about? Passion is more connecting than performance." },
+          { belief: "I'm unimportant", patterns: ["don't matter","nobody cares","invisible","replaceable","forgettable","nobody would notice"],
+            reframe: "Impact is often invisible to you. What's the evidence someone HAS been affected by you? People rarely tell you how much you matter 鈥?that doesn't mean you don't." },
+          { belief: "I'm worthless", patterns: ["worthless","no value","nobody would miss","contribute nothing","pointless"],
+            reframe: "Worth is inherent, not earned. What would the people who care about you say about your value? The feeling of worthlessness is a symptom, not a fact." }
+        ]
+      }
+    };
+
+    // The core algorithm: f(thought, domain) -> belief
+    // Context-DEPENDENT classification. The same thought produces
+    // different beliefs in different domains.
+    function detectBelief(thought, domainKey) {
+      var t = thought.toLowerCase().trim();
+      var domain = DOMAINS[domainKey];
+      if (!domain) return null;
+
+      var results = [];
+      for (var i = 0; i < domain.beliefs.length; i++) {
+        var b = domain.beliefs[i];
+        var matchedPatterns = [];
+        for (var j = 0; j < b.patterns.length; j++) {
+          if (t.indexOf(b.patterns[j]) > -1) {
+            matchedPatterns.push(b.patterns[j]);
+          }
+        }
+        if (matchedPatterns.length > 0) {
+          var confidence = matchedPatterns.length >= 3 ? "high" : (matchedPatterns.length === 2 ? "medium" : "low");
+          results.push({
+            belief: b.belief,
+            patterns: matchedPatterns,
+            confidence: confidence,
+            reframe: b.reframe,
+            domain: domain.label
+          });
+        }
+      }
+
+      // Sort by confidence: high > medium > low
+      var order = { high: 0, medium: 1, low: 2 };
+      results.sort(function(a, b) { return order[a.confidence] - order[b.confidence]; });
+      return results;
+    }
+
+    // Show what the SAME thought would detect in OTHER domains
+    // This is the key insight: context changes the classification
+    function detectInOtherDomains(thought, currentDomain) {
+      var t = thought.toLowerCase().trim();
+      var others = [];
+      for (var key in DOMAINS) {
+        if (key === currentDomain) continue;
+        var r = detectBelief(thought, key);
+        if (r && r.length > 0) {
+          others.push({ domain: DOMAINS[key].label, belief: r[0].belief });
+        }
+      }
+      return others;
+    }
+
+    function detect() {
+      var thought = document.getElementById('thought').value.trim();
+      var domainKey = document.getElementById('domain').value;
+      var card = document.getElementById('resultCard');
+      var result = document.getElementById('result');
+
+      if (!thought) { alert('Enter a thought first.'); return; }
+      if (!domainKey) { alert('Select a life domain.'); return; }
+
+      var beliefs = detectBelief(thought, domainKey);
+      card.style.display = 'block';
+
+      if (!beliefs || beliefs.length === 0) {
+        result.innerHTML = '<div class="none-found">No strong core belief pattern detected in this domain. Try rephrasing your thought, or try a different domain 鈥?the same words may activate a belief in a different context.</div>';
+        return;
+      }
+
+      var html = '';
+      for (var i = 0; i < beliefs.length; i++) {
+        var b = beliefs[i];
+        html += '<div class="belief-item">' +
+          '<div class="belief-name">' + b.belief + ' <span style="font-size:0.8rem;color:var(--text-muted);">(' + b.confidence + ' confidence &middot; ' + b.domain + ')</span></div>' +
+          '<div class="belief-match">Matched: "' + b.patterns.join('", "') + '"</div>' +
+          '<div class="belief-reframe"><strong>Reframe:</strong> ' + b.reframe + '</div>' +
+        '</div>';
+      }
+
+      // The context insight: what would this same thought detect in other domains?
+      var others = detectInOtherDomains(thought, domainKey);
+      if (others.length > 0) {
+        var differentBeliefs = others.filter(function(o) { return o.belief !== beliefs[0].belief; });
+        if (differentBeliefs.length > 0) {
+          html += '<div class="context-insight"><strong>Context matters:</strong> The same thought ("' + thought.substring(0, 60) + (thought.length > 60 ? '...' : '') + '") in other domains would detect: ';
+          var parts = differentBeliefs.slice(0, 3).map(function(o) {
+            return '<em>' + o.domain + '</em> &rarr; <strong>' + o.belief + '</strong>';
+          });
+          html += parts.join(', ') + '. The belief that fits depends on the context 鈥?this is why a classifier that ignores context will sometimes misclassify your thoughts.</div>';
+        }
+      }
+
+      result.innerHTML = html;
+    }
+
+    function loadExample() {
+      document.getElementById('thought').value = "I'm not good enough, nobody is going to want me";
+      document.getElementById('domain').value = 'romantic';
+      detect();
+    }
+  </script>
+</body>
+</html>
