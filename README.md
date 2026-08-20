@@ -1,0 +1,132 @@
+# CBT Toolkit 鈥?23 Free Interactive Mental Health Tools
+
+> Built with **vanilla JavaScript**. No framework. No backend. No signup. No dependencies. Just open and use.
+
+A collection of 23 free interactive CBT (Cognitive Behavioral Therapy) tools and guides. Each tool runs entirely in the browser 鈥?your data stays in `localStorage`, never leaves your device, and works offline.
+
+**Live demo**: [https://473185670.github.io/cbt-toolkit/](https://473185670.github.io/cbt-toolkit/)
+
+**Toolkit hub**: [https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html](https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html)
+
+---
+
+## Why CBT?
+
+Cognitive Behavioral Therapy is the most evidence-based form of psychotherapy, with decades of research supporting its effectiveness for anxiety, depression, OCD, panic attacks, PTSD, and more. These tools bring CBT's core techniques 鈥?thought records, cognitive restructuring, behavioral experiments, exposure hierarchies 鈥?into interactive, self-guided formats you can use anytime.
+
+## What's Included
+
+### Interactive Tools
+
+| Tool | What It Does | Link |
+|------|-------------|------|
+| **Thought Record** | 7-step CBT thought record with distortion checker | [Open](seo/free-cbt-thought-record-tool.html) |
+| **Cognitive Distortion Checker** | Paste a thought 鈫?see which of 11 thinking traps apply | [Open](seo/cognitive-distortion-checker.html) |
+| **Mood Tracker** | Log daily mood, view trends, behavioral activation tips | [Open](seo/cbt-mood-tracker.html) |
+| **Thought Record Template** | Classic 7-column worksheet, print-optimized | [Open](seo/cbt-thought-record-template.html) |
+| **Negative Thought Reframer** | Enter a thought 鈫?get a balanced CBT reframe | [Open](seo/how-to-stop-negative-thoughts.html) |
+| **Context-Dependent Belief Detector** | Same thought 鈫?different core beliefs by life domain | [Open](seo/cbt-context-belief-detector.html) |
+
+### Condition-Specific Guides + Interactive Tools
+
+| Condition | Techniques + Interactive Tool | Link |
+|-----------|------------------------------|------|
+| **Anxiety** | 6 techniques + 5-4-3-2-1 grounding widget | [Open](seo/cbt-for-anxiety.html) |
+| **Depression** | 6 techniques + activity scheduler widget | [Open](seo/cbt-for-depression.html) |
+| **OCD** | 6 techniques + ERP tracker widget | [Open](seo/cbt-for-ocd.html) |
+| **Panic Attacks** | 6 techniques + panic diary widget | [Open](seo/cbt-for-panic-attacks.html) |
+| **Social Anxiety** | 6 techniques + exposure hierarchy builder | [Open](seo/cbt-for-social-anxiety.html) |
+| **Health Anxiety** | 6 techniques + symptom diary widget | [Open](seo/cbt-for-health-anxiety.html) |
+| **PTSD & Trauma** | 6 techniques + stuck point log widget | [Open](seo/cbt-for-ptsd-trauma.html) |
+| **Intrusive Thoughts** | 7 techniques + intrusive thought tracker | [Open](seo/cbt-for-intrusive-thoughts.html) |
+| **Perfectionism** | 6 techniques + perfectionism tracker | [Open](seo/cbt-for-perfectionism.html) |
+| **Low Self-Esteem** | 6 techniques + core belief tracker + positive data log | [Open](seo/cbt-for-low-self-esteem.html) |
+| **Imposter Syndrome** | 6 techniques + impostor thought record + evidence log | [Open](seo/cbt-for-imposter-syndrome.html) |
+| **Burnout** | 6 techniques + burnout diary widget | [Open](seo/cbt-for-burnout.html) |
+| **Body Image** | 6 techniques + body image thought record | [Open](seo/cbt-for-body-image.html) |
+| **Anger** | 6 techniques + anger diary widget | [Open](seo/cbt-for-anger.html) |
+| **Sleep / Insomnia** | 5 CBT-I techniques + sleep diary widget | [Open](seo/cbt-for-sleep.html) |
+| **Shame** | 6 techniques + shame log widget | [Open](seo/cbt-for-shame.html) |
+| **Grief & Loss** | 6 techniques + grief log widget | [Open](seo/cbt-for-grief-loss.html) |
+| **ADHD / RSD** | Techniques + ADHD thought detector | [Open](seo/cbt-for-adhd.html) |
+| **Relationship Anxiety** | 5 distortions + relationship thought record | [Open](seo/cbt-for-relationship-anxiety.html) |
+| **Procrastination** | Techniques + procrastination tracker | [Open](seo/cbt-for-procrastination.html) |
+
+### Guides
+
+| Guide | Link |
+|-------|------|
+| How to Do a CBT Thought Record (worked example) | [Open](seo/how-to-do-cbt-thought-record.html) |
+| CBT Exercises & Worksheets Hub (10 techniques) | [Open](seo/cbt-exercises-worksheets.html) |
+
+---
+
+## Features
+
+- **Zero dependencies** 鈥?no npm, no CDN, no framework. Pure HTML/CSS/JS.
+- **Privacy-first** 鈥?all data stored in `localStorage`. Nothing is sent to any server.
+- **Offline-capable** 鈥?works without internet after first load.
+- **Export your data** 鈥?JSON export from every tool.
+- **Print-optimized** 鈥?worksheets print cleanly on A4/Letter.
+- **SEO-optimized** 鈥?each page has structured data (FAQPage, Article, BreadcrumbList schema).
+- **Responsive** 鈥?works on phone, tablet, and desktop.
+
+## How to Use
+
+### Option 1: Use the live site (easiest)
+Visit [the toolkit hub](https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html) and pick a tool.
+
+### Option 2: Run locally
+```bash
+git clone https://github.com/473185670/cbt-toolkit.git
+cd cbt-toolkit
+# Open any HTML file in seo/ directory in your browser
+# Or serve locally:
+python -m http.server 8000
+# Then visit http://localhost:8000/seo/cbt-toolkit-hub.html
+```
+
+### Option 3: Deploy your own
+All files are static HTML. Drop them on any host 鈥?GitHub Pages, Netlify, Vercel, Cloudflare Pages, or even a USB drive.
+
+---
+
+## Architecture
+
+Each tool is a single self-contained HTML file with inline CSS and JavaScript. The core pattern:
+
+```
+User input 鈫?keyword-pattern matching 鈫?CBT technique 鈫?reframe/guidance 鈫?localStorage save
+```
+
+**Why keyword-pattern matching instead of ML/NLP?**
+- **Precision**: deterministic, same input 鈫?same output every time
+- **Zero latency**: no API call, no model load
+- **Zero cost**: no API bills
+- **Zero privacy risk**: thoughts never leave the browser
+- **Explainability**: the full matched chain IS the intervention
+- **Small known output space**: CBT has ~11 distortions, ~13 core beliefs 鈥?no need for a language model
+
+---
+
+## Upsell: CBT Thought Record Notion Template
+
+For a structured, always-accessible thought record, check out the [CBT Thought Record Notion Template](https://4043969836017.gumroad.com/l/yyzll) ($7 on Gumroad). It includes:
+- Pre-built 7-column thought record database
+- Cognitive distortions reference table
+- Mood tracker integration
+- Weekly review template
+
+---
+
+## Contributing
+
+This is a personal project but suggestions are welcome. If you find a bug or have a feature request, please open an issue.
+
+## License
+
+Free for personal use. If you find these tools helpful, consider [starring the repo](https://github.com/473185670/cbt-toolkit) 猸?or sharing with someone who might benefit.
+
+---
+
+**Disclaimer**: These tools are for self-help and education. They are not a substitute for professional mental health care. If you're in crisis, please contact a mental health professional or emergency services.
