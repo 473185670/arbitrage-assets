@@ -1,6 +1,10 @@
 # CBT Toolkit 鈥?23 Free Interactive Mental Health Tools
 
+![Stars](https://img.shields.io/github/stars/473185670/cbt-toolkit?style=social&label=Star) ![Forks](https://img.shields.io/github/forks/473185670/cbt-toolkit?style=social&label=Fork)
+
 > Built with **vanilla JavaScript**. No framework. No backend. No signup. No dependencies. Just open and use.
+
+> ⭐ **Found this helpful? Please give it a star!** It helps others discover these free mental health tools.
 
 A collection of 23 free interactive CBT (Cognitive Behavioral Therapy) tools and guides. Each tool runs entirely in the browser 鈥?your data stays in `localStorage`, never leaves your device, and works offline.
 
