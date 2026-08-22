@@ -198,4 +198,10 @@
     <loc>https://473185670.github.io/cbt-toolkit/seo/cognitive-distortions-zh.html</loc>
     <lastmod>2026-08-22</lastmod>
   </url>
+  <url>
+    <loc>https://473185670.github.io/cbt-toolkit/seo/cbt-resources-hub.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
