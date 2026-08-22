@@ -8,6 +8,23 @@ A collection of 23 free interactive CBT (Cognitive Behavioral Therapy) tools and
 
 **Toolkit hub**: [https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html](https://473185670.github.io/cbt-toolkit/seo/cbt-toolkit-hub.html)
 
+
+## 💬 Telegram Bot — Interactive CBT Thought Records
+
+**[@trevor_pl_bot](https://t.me/trevor_pl_bot)** on Telegram walks you through a 7-step CBT thought record in chat — no app, no signup, no data stored on any server.
+
+Just message the bot `/record` and it guides you through:
+
+1. **Situation** — what happened?
+2. **Automatic thought** — what went through your mind?
+3. **Emotion + intensity** — what did you feel, how strong (0-100)?
+4. **Evidence for** — what supports the thought?
+5. **Evidence against** — what contradicts it?
+6. **Balanced thought** — a fairer alternative
+7. **Re-rate emotion** — how do you feel now?
+
+The bot detects cognitive distortions (mind-reading, catastrophizing, all-or-nothing, etc.) in real time and suggests reframes. It's free. Try it: **[@trevor_pl_bot](https://t.me/trevor_pl_bot)**
+
 ---
 
 ## Why CBT?
